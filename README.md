@@ -11,7 +11,7 @@
 * [elmo](https://github.com/HIT-SCIR/ELMoForManyLangs)
 
 ## 模型设计
-![](https://github.com/sys1874/Seq2seq-for-Souhu-2019/tree/master/extend/model_struct.png)
+![](/extend/model_struct.png)
 
 ## Usage
 
