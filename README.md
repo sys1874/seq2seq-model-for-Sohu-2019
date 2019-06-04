@@ -34,7 +34,7 @@ python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/b
 python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/baseline_elmo    --gpu 0     --max_vocab_size 50000   --min_freq  5 --entity_file ./data/entity.txt   \
 --lr 0.0003  --hidden_size 1024  --num_layers 2   --attn mlp   --log_steps 100    --valid_steps 1300 --batch_size 15    --pretrain_epoch -1     --lr_decay 0.5  --elmo
 ```
-还有一些其他的，如更换RNN类型 --rnn_type, 使用词性标注 --POS ，大家可以自行尝试
+还有一些其他的参数，如更换RNN类型 --rnn_type, 使用词性标注 --POS ，大家可以阅读network.py，自行尝试。
 
 
 ### Step 3: 测试 Model
