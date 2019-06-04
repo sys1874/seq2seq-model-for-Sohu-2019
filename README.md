@@ -1,8 +1,8 @@
-# Sohu 2019 内容识别大赛 （初赛rank11解决方案）  
-## 基于seq2seq的端到端核心实体识别和情感预测
+# Sohu 2019 内容识别大赛 
+## 基于seq2seq的端到端核心实体识别和情感预测（初赛rank11）
 
 
-This is a pytorch implementation of generative-based model for knowledge-driven dialogue
+
 
 ## Requirements
 
