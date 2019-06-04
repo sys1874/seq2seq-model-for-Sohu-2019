@@ -8,10 +8,16 @@
 * python>=3.6
 * pytorch>=1.0
 * tqdm
-* [elmo](https://github.com/HIT-SCIR/ELMoForManyLangs)
+* [elmo(可选)](https://github.com/HIT-SCIR/ELMoForManyLangs)
 
 ## 模型设计
 ![](/extend/model_struct.png)
+### 示例：
+装机容易忽视的**组件**，主机**电源**不能随便选对于大部分入门玩家来说，在电源的选择上往往都比较随意。
+1. 按照核心实体在原文的位置，构造解码序列。如上述例子，解码序列为： （1）**组件**、 （2）**电源**
+2. 利用seq2seq 的attention机制去标注实体。训练时，使得原文中目标实体对应的attention score最大；预测时，attention score最大的单词为目标实体。
+3. 利用seq2seq 的输出层预测实体对应的情感。
+4. 利用beam search，使得预测出的 核心实体训练总体得分最大化。
 
 ## Usage
 
