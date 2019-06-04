@@ -8,6 +8,10 @@
 * python>=3.6
 * pytorch>=1.0
 * tqdm
+* [elmo](https://github.com/HIT-SCIR/ELMoForManyLangs)
+
+## 模型设计
+
 
 ## Usage
 
@@ -20,7 +24,7 @@
 ./data/entity.txt
 ```
 
-### Step 2: Train the model
+### Step 2: 训练 Model
 
 训练baseline
 
@@ -44,8 +48,3 @@ python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/b
 --lr 0.0003  --hidden_size 1024  --num_layers 2   --attn mlp  --log_steps 100  --valid_steps 300  --batch_size 64   --pretrain_epoch -1     --lr_decay 0.5 \ 
 --ckpt  ./emo_models/layer_2_64_embed_19/best.model   --test     --beam_size 5  --gen_file   ./result/new_result_emo12.txt   --for_test
 ```
-
-### Note !!!
-
-* The script run_train.sh/run_test.sh shows all the processes including data processing and model training/testing. Be sure to read it carefully and follow it.
-* The files in ./data and ./model is just empty file to show the structure of the document.
