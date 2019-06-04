@@ -25,7 +25,7 @@
 | :---------------: |:---------------:| :---------------:| :---------------:| :---------------:|
 | baseline      | seq2seq+beam_search+glove | 0.5468 | 0.2885 | 0.4177 |
 | ensemble      | 集成GRU/LSTM        | 0.5623 | 0.3392 | 0.4508 |
-| Baseline+elmo | 添加elmo       |   0.5783 | 0.3525 | 0.4515|
+| Baseline+elmo | 添加elmo       |   0.5660 | 0.3369 | 0.4515|
 |ensemble(elmo)|集成添加了elmo的LSTM、GRU|0.5783|0.3525|0.4654|
 |ensemble(elmo)+正向最大匹配|利用正向最大匹配增加候选实体|0.5857|0.3594|0.4725|
 
@@ -70,3 +70,8 @@ python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/b
 ```
 ensemble.ipynb baseline model 平均融合 \
 ensemble_elmo.ipynb elmo model 平均融合
+
+## acknowledge
+该项目代码是在 百度2019-知识驱动的多轮对话的[baseline](https://github.com/baidu/knowledge-driven-dialogue/tree/master/generative_pt)上进行改进的。\
+同时，我们在[百度2019-知识驱动的多轮对话](http://lic2019.ccf.org.cn/talk)中取得**自动评测Top1，人工评测Top2**的成绩，相关代码将在后续进行开源。
+
