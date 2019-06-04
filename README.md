@@ -6,7 +6,7 @@
 
 ## 环境要求
 * python>=3.6
-* pytorch>=1.0
+* pytorch>=0.4.1
 * tqdm
 * [elmo(可选)](https://github.com/HIT-SCIR/ELMoForManyLangs)
 
