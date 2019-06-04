@@ -4,43 +4,45 @@
 
 
 
-## Requirements
-
-* cuda=9.0
-* cudnn=7.0
+## 环境要求
 * python>=3.6
 * pytorch>=1.0
 * tqdm
-* numpy
-* nltk
-* scikit-learn
 
-## Quickstart
+## Usage
 
-### Step 1: Preprocess the data
-
-Put the data provided by the organizer under the data folder and rename them  train/dev/test.txt: 
+### Step 1: 执行preprocess.ipynb进行数据预处理
+处理完的结果如下
 
 ```
-./data/resource/train.txt
-./data/resource/dev.txt
-./data/resource/test.txt
+./data/model.train
+./data/model.test.raw
+./data/entity.txt
 ```
 
 ### Step 2: Train the model
 
-Train model with the following commands.
+训练baseline
 
-```bash
-sh run_train.sh
 ```
+python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/baseline    --gpu 0     --max_vocab_size 50000   --min_freq  5 --entity_file ./data/entity.txt   \
+--lr 0.0003  --hidden_size 1024  --num_layers 2   --attn mlp  --log_steps 100  --valid_steps 300  --batch_size 64   --pretrain_epoch -1     --lr_decay 0.5
+```
+训练baseline+elmo
 
-### Step 3: Test the Model
+```
+python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/baseline_elmo    --gpu 0     --max_vocab_size 50000   --min_freq  5 --entity_file ./data/entity.txt   \
+--lr 0.0003  --hidden_size 1024  --num_layers 2   --attn mlp   --log_steps 100    --valid_steps 1300 --batch_size 15    --pretrain_epoch -1     --lr_decay 0.5  --elmo
+```
+还有一些其他的，如更换RNN类型 --rnn_type, 使用词性标注 --POS ，大家可以自行尝试
 
-Test model with the following commands.
 
-```bash
-sh run_test.sh
+### Step 3: 测试 Model
+
+```
+python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/baseline    --gpu 0     --max_vocab_size 50000   --min_freq  5 --entity_file ./data/entity.txt   \
+--lr 0.0003  --hidden_size 1024  --num_layers 2   --attn mlp  --log_steps 100  --valid_steps 300  --batch_size 64   --pretrain_epoch -1     --lr_decay 0.5 \ 
+--ckpt  ./emo_models/layer_2_64_embed_19/best.model   --test     --beam_size 5  --gen_file   ./result/new_result_emo12.txt   --for_test
 ```
 
 ### Note !!!
