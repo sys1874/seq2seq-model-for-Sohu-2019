@@ -11,7 +11,7 @@
 * [elmo](https://github.com/HIT-SCIR/ELMoForManyLangs)
 
 ## 模型设计
-
+![](https://github.com/sys1874/Seq2seq-for-Souhu-2019/tree/master/extend/model_struct.png)
 
 ## Usage
 
@@ -48,6 +48,5 @@ python network.py --data_dir ./data/  --data_prefix model  --save_dir ./models/b
 --lr 0.0003  --hidden_size 1024  --num_layers 2   --attn mlp  --log_steps 100  --valid_steps 300  --batch_size 64   --pretrain_epoch -1     --lr_decay 0.5 \ 
 --ckpt  ./emo_models/layer_2_64_embed_19/best.model   --test     --beam_size 5  --gen_file   ./result/new_result_emo12.txt   --for_test
 ```
-ensemble.ipynb baseline model 平均融合
+ensemble.ipynb baseline model 平均融合 \
 ensemble_elmo.ipynb elmo model 平均融合
-
